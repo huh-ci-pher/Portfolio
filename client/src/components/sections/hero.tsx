@@ -5,7 +5,7 @@ import { Download, Mail } from "lucide-react";
 
 const phrases = [
   "Java Backend Developer",
-  "Spring Boot Enthusiast", 
+  "Spring Boot Enthusiast",
   "API Architect",
   "Problem Solver"
 ];
@@ -66,15 +66,14 @@ export function HeroSection() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Image */}
+      {/* Background with Gradient and Floating Elements */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
-          alt="Modern development workspace" 
-          className="w-full h-full object-cover opacity-20" 
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark-bg via-dark-bg/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-dark-bg"></div>
+        <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-java-orange/20 rounded-full blur-[100px] animate-float"></div>
+        <div className="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-tech-blue/20 rounded-full blur-[100px] animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
       </div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl">
           <motion.div
@@ -82,7 +81,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.h1 
+            <motion.h1
               className="text-5xl md:text-7xl font-bold mb-6"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -90,8 +89,8 @@ export function HeroSection() {
             >
               Hi, I'm <span className="text-java-orange">Alex Chen</span>
             </motion.h1>
-            
-            <motion.h2 
+
+            <motion.h2
               className="text-2xl md:text-4xl mb-8 text-gray-300 h-16"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -101,24 +100,24 @@ export function HeroSection() {
                 {currentPhrase}
               </span>
             </motion.h2>
-            
-            <motion.p 
+
+            <motion.p
               className="text-xl mb-12 text-gray-400 max-w-2xl leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Passionate about building scalable backend systems and RESTful APIs. 
+              Passionate about building scalable backend systems and RESTful APIs.
               Currently specializing in Java, Spring Boot, and microservices architecture.
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               className="flex flex-col sm:flex-row gap-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <Button 
+              <Button
                 onClick={handleDownloadResume}
                 className="bg-java-orange hover:bg-java-orange/80 text-dark-bg px-8 py-4 rounded-lg font-semibold transition-all hover:animate-glow"
                 size="lg"
@@ -126,7 +125,7 @@ export function HeroSection() {
                 <Download className="mr-2 h-5 w-5" />
                 Download Resume
               </Button>
-              <Button 
+              <Button
                 onClick={scrollToContact}
                 variant="outline"
                 className="border-2 border-tech-blue text-tech-blue hover:bg-tech-blue hover:text-dark-bg px-8 py-4 rounded-lg font-semibold transition-all"
@@ -139,31 +138,8 @@ export function HeroSection() {
           </motion.div>
         </div>
       </div>
-      
-      {/* Floating Code Snippets */}
-      <motion.div 
-        className="absolute top-20 right-10 opacity-30 hidden lg:block"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 0.3, x: 0 }}
-        transition={{ duration: 1, delay: 1.2 }}
-      >
-        <div className="bg-card-bg p-4 rounded-lg font-mono text-sm">
-          <span className="text-tech-blue">@RestController</span><br />
-          <span className="text-white">public class</span> <span className="text-java-orange">UserController</span>
-        </div>
-      </motion.div>
-      
-      <motion.div 
-        className="absolute bottom-32 left-10 opacity-30 hidden lg:block"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 0.3, x: 0 }}
-        transition={{ duration: 1, delay: 1.4 }}
-      >
-        <div className="bg-card-bg p-4 rounded-lg font-mono text-sm">
-          <span className="text-tech-blue">@Service</span><br />
-          <span className="text-white">public void</span> <span className="text-java-orange">processData()</span>
-        </div>
-      </motion.div>
+
+
     </section>
   );
 }

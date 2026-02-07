@@ -1,41 +1,59 @@
 # Java Backend Developer Portfolio
 
-A professional, animated portfolio website tailored for fresher Java Backend Developers. Built with a modern tech stack and designed to showcase technical skills, learning journeys, and backend projects to recruiters.
+A professional, animated portfolio website tailored for Java Backend Developers. Built with a modern tech stack to showcase technical skills, learning journeys, and backend projects.
 
 ## 🚀 Features
 
-- **Animated Hero Section**: Engaging typing effect highlighting roles and expertise.
-- **Learning Journey Timeline**: A professional overview of educational milestones and skill acquisition.
-- **Technical Skills Showcase**: Animated proficiency bars for Java, Spring Boot, SQL, and more.
-- **Project Portfolio**: Highlight backend projects with detailed descriptions and code snippets.
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
-- **Contact Integration**: Functional contact form with backend validation and success notifications.
-- **Dark Tech Theme**: Professional aesthetic with Java-orange and tech-blue accents.
+- **Spring Boot Backend**: Robust REST API for contact form and resume handling.
+- **Modern Frontend**: React + Vite with Tailwind CSS and Framer Motion animations.
+- **Glassmorphism Design**: Sleek UI with glass effects, floating animations, and dynamic interactions.
+- **Responsive Layout**: Fully optimized for mobile, tablet, and desktop.
+- **Dark Mode Aesthetic**: Professional dark theme with Java-orange and tech-blue accents.
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React.js, TypeScript, Tailwind CSS, Framer Motion, Lucide React.
-- **Backend**: Express.js, Node.js.
-- **Database**: PostgreSQL (with Drizzle ORM).
-- **UI Components**: Radix UI, shadcn/ui.
-- **Build Tool**: Vite.
+### Backend
+- **Java 17+**
+- **Spring Boot 3.x** (Web, Data JPA)
+- **H2 Database** (In-memory storage)
+- **Maven** (Build automation)
+
+### Frontend
+- **React.js** (Vite)
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion** (Animations)
+- **Lucide React** (Icons)
 
 ## ⚡ Quick Start
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Start the development server:
-   ```bash
-   npm run dev
-   ```
+### Prerequisites
+- JDK 17 or higher
+- Node.js & npm
+- Maven
+
+### 1. Start the Backend
+Navigate to the backend directory and run the Spring Boot application:
+```bash
+cd backend
+mvn spring-boot:run
+```
+The server will start on `http://localhost:8080`.
+
+### 2. Start the Frontend
+Open a new terminal, navigate to the root directory, and run:
+```bash
+npm run dev
+```
+The application will be available at `http://localhost:5173`.
 
 ## 📝 Project Structure
 
-- `client/`: React frontend source code and components.
-- `server/`: Express backend routes and storage logic.
-- `shared/`: Shared schemas and types (Zod/Drizzle).
+- `backend/`: Java Spring Boot source code.
+  - `src/main/java/com/portfolio/backend`: Controllers, Models, Repositories.
+- `client/`: React frontend source code.
+  - `src/components/`: Reusable UI components.
+  - `src/pages/`: Page layouts (Portfolio, NotFound).
 
 ---
-Made with ❤️ using **[Replit](https://replit.com)**.
+Built with ❤️ by **Alex Chen**.

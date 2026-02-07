@@ -1,0 +1,773 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Johnson - Java Backend Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'java-orange': '#f89820',
+                        'tech-blue': '#007acc',
+                        'dark-bg': '#1a1a1a',
+                        'card-bg': '#2d2d2d',
+                        'text-light': '#e4e4e4',
+                        'text-muted': '#888888'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-dark-bg text-text-light font-inter">
+    
+    <!-- @COMPONENT: Navigation -->
+    <nav class="fixed top-0 w-full bg-dark-bg/95 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold">
+                    <span class="text-java-orange">&lt;</span>
+                    <span>Alex Johnson</span>
+                    <span class="text-java-orange">/&gt;</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-java-orange transition-colors">About</a>
+                    <a href="#skills" class="hover:text-java-orange transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-java-orange transition-colors">Projects</a>
+                    <a href="#education" class="hover:text-java-orange transition-colors">Education</a>
+                    <a href="#contact" class="hover:text-java-orange transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-java-orange">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Background with coding imagery -->
+        <div class="absolute inset-0 opacity-10">
+            <!-- Multiple layers of Java programming code backgrounds -->
+            <!-- Java programming code on multiple monitors showing Spring Boot application -->
+            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080" 
+                 alt="Java programming code" class="w-full h-full object-cover" data-mock-image="true" />
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+            <div class="mb-6">
+                <span class="text-java-orange text-lg font-mono">// Welcome to my portfolio</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                <span class="text-java-orange">Java</span> Backend
+                <br>
+                <span class="text-tech-blue">Developer</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-text-muted mb-8 max-w-3xl mx-auto">
+                Passionate about building scalable backend systems with Java, Spring Boot, and modern microservices architecture. 
+                Ready to contribute fresh perspectives to your development team.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <button class="bg-java-orange hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-medium transition-colors" data-event="click:downloadResume">
+                    <i class="fas fa-download mr-2"></i>Download Resume
+                </button>
+                <a href="#projects" class="border border-tech-blue text-tech-blue hover:bg-tech-blue hover:text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                    View Projects
+                </a>
+            </div>
+
+            <!-- Code snippet showcase -->
+            <div class="bg-card-bg/50 backdrop-blur-sm rounded-xl p-6 max-w-2xl mx-auto border border-gray-700">
+                <div class="flex items-center mb-4">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <span class="text-text-muted text-sm ml-4 font-mono">HelloWorld.java</span>
+                </div>
+                <pre class="text-left font-mono text-sm text-tech-blue">
+<span class="text-purple-400">@RestController</span>
+<span class="text-yellow-400">public class</span> <span class="text-green-400">HelloController</span> {
+    <span class="text-purple-400">@GetMapping</span>(<span class="text-red-400">"/api/hello"</span>)
+    <span class="text-yellow-400">public</span> String <span class="text-blue-400">sayHello</span>() {
+        <span class="text-yellow-400">return</span> <span class="text-red-400">"Hello, World!"</span>;
+    }
+}
+                </pre>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: About Section -->
+    <section id="about" class="py-20 bg-gradient-to-b from-dark-bg to-card-bg/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="text-java-orange">About</span> Me
+                </h2>
+                <p class="text-text-muted text-lg">My journey into backend development</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- Software engineering workspace with Java development setup -->
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Software engineering workspace" class="rounded-xl shadow-lg w-full h-auto" data-mock-image="true" />
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-tech-blue">Passionate Java Developer & Quick Learner</h3>
+                    <div class="space-y-4 text-text-muted">
+                        <p>
+                            Fresh computer science graduate with a strong foundation in Java backend development. 
+                            I discovered my passion for server-side programming during my studies and have been 
+                            dedicated to mastering the Java ecosystem ever since.
+                        </p>
+                        <p>
+                            My approach combines solid theoretical knowledge with hands-on project experience. 
+                            I thrive on solving complex problems, optimizing performance, and building clean, 
+                            maintainable code that follows industry best practices.
+                        </p>
+                        <p>
+                            What sets me apart is my genuine enthusiasm for continuous learning and my ability 
+                            to quickly adapt to new technologies and frameworks within the Java ecosystem.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="bg-card-bg p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-semibold text-java-orange mb-2">Fresh Perspective</h4>
+                            <p class="text-sm text-text-muted">Latest industry practices and modern Java features</p>
+                        </div>
+                        <div class="bg-card-bg p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-semibold text-tech-blue mb-2">Growth Mindset</h4>
+                            <p class="text-sm text-text-muted">Eager to learn and contribute to team success</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    Technical <span class="text-java-orange">Skills</span>
+                </h2>
+                <p class="text-text-muted text-lg">Java ecosystem and backend technologies</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Core Java -->
+                <div class="bg-card-bg p-6 rounded-xl border border-gray-700 hover:border-java-orange transition-colors">
+                    <div class="flex items-center mb-4">
+                        <i class="fab fa-java text-3xl text-java-orange mr-4"></i>
+                        <h3 class="text-xl font-semibold">Core Java</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm">Java 17+</span>
+                            <span class="text-sm text-java-orange">Advanced</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-java-orange h-2 rounded-full w-5/6"></div>
+                        </div>
+                    </div>
+                    <ul class="mt-4 text-sm text-text-muted space-y-1">
+                        <li>• OOP Principles</li>
+                        <li>• Collections Framework</li>
+                        <li>• Multithreading</li>
+                        <li>• Lambda Expressions</li>
+                    </ul>
+                </div>
+
+                <!-- Spring Framework -->
+                <div class="bg-card-bg p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-leaf text-3xl text-green-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold">Spring Ecosystem</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm">Spring Boot</span>
+                            <span class="text-sm text-green-500">Intermediate</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-green-500 h-2 rounded-full w-3/4"></div>
+                        </div>
+                    </div>
+                    <ul class="mt-4 text-sm text-text-muted space-y-1">
+                        <li>• Spring Boot</li>
+                        <li>• Spring Data JPA</li>
+                        <li>• Spring Security</li>
+                        <li>• Spring MVC</li>
+                    </ul>
+                </div>
+
+                <!-- Databases -->
+                <div class="bg-card-bg p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-database text-3xl text-blue-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold">Databases</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm">SQL & NoSQL</span>
+                            <span class="text-sm text-blue-500">Intermediate</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full w-3/4"></div>
+                        </div>
+                    </div>
+                    <ul class="mt-4 text-sm text-text-muted space-y-1">
+                        <li>• MySQL/PostgreSQL</li>
+                        <li>• MongoDB</li>
+                        <li>• Hibernate/JPA</li>
+                        <li>• Database Design</li>
+                    </ul>
+                </div>
+
+                <!-- REST APIs -->
+                <div class="bg-card-bg p-6 rounded-xl border border-gray-700 hover:border-purple-500 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-plug text-3xl text-purple-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold">API Development</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm">RESTful Services</span>
+                            <span class="text-sm text-purple-500">Advanced</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full w-5/6"></div>
+                        </div>
+                    </div>
+                    <ul class="mt-4 text-sm text-text-muted space-y-1">
+                        <li>• REST API Design</li>
+                        <li>• JSON/XML Processing</li>
+                        <li>• API Documentation</li>
+                        <li>• Postman Testing</li>
+                    </ul>
+                </div>
+
+                <!-- Tools & DevOps -->
+                <div class="bg-card-bg p-6 rounded-xl border border-gray-700 hover:border-red-500 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tools text-3xl text-red-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold">Tools & DevOps</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm">Development Tools</span>
+                            <span class="text-sm text-red-500">Intermediate</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-red-500 h-2 rounded-full w-2/3"></div>
+                        </div>
+                    </div>
+                    <ul class="mt-4 text-sm text-text-muted space-y-1">
+                        <li>• Git/GitHub</li>
+                        <li>• Maven/Gradle</li>
+                        <li>• Docker Basics</li>
+                        <li>• IntelliJ IDEA</li>
+                    </ul>
+                </div>
+
+                <!-- Testing -->
+                <div class="bg-card-bg p-6 rounded-xl border border-gray-700 hover:border-yellow-500 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-vial text-3xl text-yellow-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold">Testing</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm">Unit & Integration</span>
+                            <span class="text-sm text-yellow-500">Intermediate</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-yellow-500 h-2 rounded-full w-2/3"></div>
+                        </div>
+                    </div>
+                    <ul class="mt-4 text-sm text-text-muted space-y-1">
+                        <li>• JUnit 5</li>
+                        <li>• Mockito</li>
+                        <li>• Integration Testing</li>
+                        <li>• Test-Driven Development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Skills Section -->
+
+    <!-- @COMPONENT: Projects Section -->
+    <section id="projects" class="py-20 bg-gradient-to-b from-card-bg/20 to-dark-bg">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    Featured <span class="text-java-orange">Projects</span>
+                </h2>
+                <p class="text-text-muted text-lg">Backend systems and API development showcase</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1: E-commerce API -->
+                <div class="bg-card-bg rounded-xl p-6 border border-gray-700 hover:border-java-orange transition-colors group">
+                    <!-- Backend development dashboard showing API endpoints and database schemas -->
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Backend development dashboard" class="w-full h-48 object-cover rounded-lg mb-6" data-mock-image="true" />
+                    
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-java-orange">E-commerce REST API</h3>
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-text-muted hover:text-tech-blue transition-colors" data-event="click:openGithub">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="text-text-muted hover:text-java-orange transition-colors" data-event="click:openDemo">
+                                <i class="fas fa-external-link-alt text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <p class="text-text-muted mb-4">
+                        Complete e-commerce backend with user authentication, product management, shopping cart, 
+                        and order processing. Built with Spring Boot and MySQL.
+                    </p>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2 text-tech-blue">Key Features:</h4>
+                        <ul class="text-sm text-text-muted space-y-1">
+                            <li>• JWT-based authentication</li>
+                            <li>• RESTful API design</li>
+                            <li>• Database relationships</li>
+                            <li>• Error handling & validation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-java-orange/20 text-java-orange px-3 py-1 rounded-full text-xs">Spring Boot</span>
+                        <span class="bg-blue-500/20 text-blue-500 px-3 py-1 rounded-full text-xs">MySQL</span>
+                        <span class="bg-green-500/20 text-green-500 px-3 py-1 rounded-full text-xs">JPA</span>
+                        <span class="bg-purple-500/20 text-purple-500 px-3 py-1 rounded-full text-xs">JWT</span>
+                    </div>
+                    
+                    <!-- Code snippet -->
+                    <div class="bg-dark-bg rounded-lg p-4 font-mono text-xs">
+                        <div class="text-tech-blue">
+                            <span class="text-purple-400">@PostMapping</span>(<span class="text-red-400">"/api/products"</span>)<br>
+                            <span class="text-yellow-400">public</span> ResponseEntity&lt;Product&gt; <span class="text-blue-400">createProduct</span>(<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">@RequestBody</span> Product product) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow-400">return</span> productService.<span class="text-blue-400">save</span>(product);<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Task Management API -->
+                <div class="bg-card-bg rounded-xl p-6 border border-gray-700 hover:border-tech-blue transition-colors group">
+                    <!-- API development interface showing REST endpoints and JSON responses -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="API development interface" class="w-full h-48 object-cover rounded-lg mb-6" data-mock-image="true" />
+                    
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-tech-blue">Task Management System</h3>
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-text-muted hover:text-tech-blue transition-colors" data-event="click:openGithub">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="text-text-muted hover:text-java-orange transition-colors" data-event="click:openDemo">
+                                <i class="fas fa-external-link-alt text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <p class="text-text-muted mb-4">
+                        RESTful API for task management with user roles, project organization, 
+                        and real-time updates. Implements clean architecture principles.
+                    </p>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2 text-java-orange">Technical Highlights:</h4>
+                        <ul class="text-sm text-text-muted space-y-1">
+                            <li>• Role-based access control</li>
+                            <li>• Custom exception handling</li>
+                            <li>• API documentation with Swagger</li>
+                            <li>• Unit & integration tests</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-java-orange/20 text-java-orange px-3 py-1 rounded-full text-xs">Spring Boot</span>
+                        <span class="bg-green-500/20 text-green-500 px-3 py-1 rounded-full text-xs">PostgreSQL</span>
+                        <span class="bg-red-500/20 text-red-500 px-3 py-1 rounded-full text-xs">Redis</span>
+                        <span class="bg-blue-500/20 text-blue-500 px-3 py-1 rounded-full text-xs">Swagger</span>
+                    </div>
+                    
+                    <!-- Code snippet -->
+                    <div class="bg-dark-bg rounded-lg p-4 font-mono text-xs">
+                        <div class="text-tech-blue">
+                            <span class="text-purple-400">@Entity</span><br>
+                            <span class="text-yellow-400">public class</span> <span class="text-green-400">Task</span> {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">@Id</span> <span class="text-purple-400">@GeneratedValue</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow-400">private</span> Long <span class="text-blue-400">id</span>;<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Microservices Demo -->
+                <div class="bg-card-bg rounded-xl p-6 border border-gray-700 hover:border-green-500 transition-colors group">
+                    <!-- Java programming code showing microservices architecture -->
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Java programming code" class="w-full h-48 object-cover rounded-lg mb-6" data-mock-image="true" />
+                    
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-green-500">Microservices Architecture</h3>
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-text-muted hover:text-tech-blue transition-colors" data-event="click:openGithub">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <p class="text-text-muted mb-4">
+                        Demonstration of microservices architecture with Spring Cloud, 
+                        service discovery, and API gateway implementation.
+                    </p>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2 text-tech-blue">Architecture Components:</h4>
+                        <ul class="text-sm text-text-muted space-y-1">
+                            <li>• Service registry (Eureka)</li>
+                            <li>• API Gateway</li>
+                            <li>• Config server</li>
+                            <li>• Circuit breaker pattern</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-green-500/20 text-green-500 px-3 py-1 rounded-full text-xs">Spring Cloud</span>
+                        <span class="bg-blue-500/20 text-blue-500 px-3 py-1 rounded-full text-xs">Eureka</span>
+                        <span class="bg-purple-500/20 text-purple-500 px-3 py-1 rounded-full text-xs">Gateway</span>
+                        <span class="bg-red-500/20 text-red-500 px-3 py-1 rounded-full text-xs">Docker</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: Real-time Chat API -->
+                <div class="bg-card-bg rounded-xl p-6 border border-gray-700 hover:border-purple-500 transition-colors group">
+                    <!-- Backend development showing WebSocket connections and real-time data flow -->
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Backend development setup" class="w-full h-48 object-cover rounded-lg mb-6" data-mock-image="true" />
+                    
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-purple-500">Real-time Chat API</h3>
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-text-muted hover:text-tech-blue transition-colors" data-event="click:openGithub">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <p class="text-text-muted mb-4">
+                        WebSocket-based real-time messaging system with room management, 
+                        message persistence, and online status tracking.
+                    </p>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2 text-java-orange">Real-time Features:</h4>
+                        <ul class="text-sm text-text-muted space-y-1">
+                            <li>• WebSocket connections</li>
+                            <li>• Message broadcasting</li>
+                            <li>• Room management</li>
+                            <li>• Online presence</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-java-orange/20 text-java-orange px-3 py-1 rounded-full text-xs">WebSocket</span>
+                        <span class="bg-green-500/20 text-green-500 px-3 py-1 rounded-full text-xs">STOMP</span>
+                        <span class="bg-blue-500/20 text-blue-500 px-3 py-1 rounded-full text-xs">MongoDB</span>
+                        <span class="bg-red-500/20 text-red-500 px-3 py-1 rounded-full text-xs">Socket.IO</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center bg-tech-blue hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-colors" data-event="click:viewMoreProjects">
+                    <i class="fab fa-github mr-2"></i>
+                    View More on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Projects Section -->
+
+    <!-- @COMPONENT: Education Section -->
+    <section id="education" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    Education & <span class="text-java-orange">Certifications</span>
+                </h2>
+                <p class="text-text-muted text-lg">Academic background and continuous learning</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Education -->
+                <div class="bg-card-bg rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-2xl font-bold text-tech-blue mb-6">Education</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-java-orange pl-4">
+                            <h4 class="text-lg font-semibold">Bachelor of Computer Science</h4>
+                            <p class="text-java-orange font-medium">State University</p>
+                            <p class="text-text-muted text-sm">2020 - 2024 • GPA: 3.7/4.0</p>
+                            <ul class="mt-2 text-sm text-text-muted space-y-1">
+                                <li>• Data Structures & Algorithms</li>
+                                <li>• Object-Oriented Programming</li>
+                                <li>• Database Systems</li>
+                                <li>• Software Engineering</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="border-l-4 border-tech-blue pl-4">
+                            <h4 class="text-lg font-semibold">Relevant Coursework</h4>
+                            <div class="grid grid-cols-2 gap-2 mt-2 text-sm text-text-muted">
+                                <span>• Web Development</span>
+                                <span>• System Design</span>
+                                <span>• Computer Networks</span>
+                                <span>• Operating Systems</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="bg-card-bg rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-2xl font-bold text-java-orange mb-6">Certifications</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 bg-dark-bg rounded-lg border border-gray-700">
+                            <i class="fab fa-java text-2xl text-java-orange mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold">Oracle Java SE 11 Certified</h4>
+                                <p class="text-sm text-text-muted">Oracle • 2024</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-4 bg-dark-bg rounded-lg border border-gray-700">
+                            <i class="fas fa-leaf text-2xl text-green-500 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold">Spring Professional Certification</h4>
+                                <p class="text-sm text-text-muted">VMware • 2024</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-4 bg-dark-bg rounded-lg border border-gray-700">
+                            <i class="fas fa-database text-2xl text-blue-500 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold">MySQL Database Administration</h4>
+                                <p class="text-sm text-text-muted">MySQL • 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-4 bg-dark-bg rounded-lg border border-gray-700">
+                            <i class="fab fa-git-alt text-2xl text-red-500 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold">Git Version Control</h4>
+                                <p class="text-sm text-text-muted">GitHub • 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-gradient-to-r from-java-orange/10 to-tech-blue/10 rounded-lg border border-java-orange/30">
+                        <h4 class="font-semibold text-java-orange mb-2">Currently Pursuing</h4>
+                        <p class="text-sm text-text-muted">AWS Certified Developer Associate</p>
+                        <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
+                            <div class="bg-java-orange h-2 rounded-full w-3/4"></div>
+                        </div>
+                        <span class="text-xs text-text-muted">75% Complete</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Education Section -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-card-bg/20 to-dark-bg">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    Get In <span class="text-java-orange">Touch</span>
+                </h2>
+                <p class="text-text-muted text-lg">Ready to contribute to your development team</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-bold text-tech-blue mb-6">Let's Connect</h3>
+                    <p class="text-text-muted mb-8">
+                        I'm actively seeking opportunities as a Java Backend Developer. 
+                        Let's discuss how I can contribute to your team's success.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-java-orange text-xl mr-4 w-6"></i>
+                            <span data-bind="user.email">alex.johnson.dev@email.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-java-orange text-xl mr-4 w-6"></i>
+                            <span data-bind="user.phone">+1 (555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-java-orange text-xl mr-4 w-6"></i>
+                            <span data-bind="user.location">San Francisco Bay Area</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-800 hover:bg-tech-blue p-3 rounded-lg transition-colors" data-event="click:openLinkedIn">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-colors" data-event="click:openGitHub">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-tech-blue p-3 rounded-lg transition-colors" data-event="click:openTwitter">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-red-600 p-3 rounded-lg transition-colors" data-event="click:sendEmail">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-card-bg rounded-xl p-6 border border-gray-700">
+                    <form class="space-y-6" data-event="submit:handleContactForm">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full bg-dark-bg border border-gray-600 rounded-lg px-4 py-3 text-text-light focus:border-java-orange focus:outline-none transition-colors"
+                                   placeholder="Your Name" data-mock="true">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full bg-dark-bg border border-gray-600 rounded-lg px-4 py-3 text-text-light focus:border-java-orange focus:outline-none transition-colors"
+                                   placeholder="your.email@company.com" data-mock="true">
+                        </div>
+                        
+                        <div>
+                            <label for="company" class="block text-sm font-medium mb-2">Company</label>
+                            <input type="text" id="company" name="company" 
+                                   class="w-full bg-dark-bg border border-gray-600 rounded-lg px-4 py-3 text-text-light focus:border-tech-blue focus:outline-none transition-colors"
+                                   placeholder="Company Name (Optional)" data-mock="true">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required 
+                                      class="w-full bg-dark-bg border border-gray-600 rounded-lg px-4 py-3 text-text-light focus:border-java-orange focus:outline-none transition-colors resize-none"
+                                      placeholder="Tell me about the opportunity..." data-mock="true"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-java-orange hover:bg-orange-600 text-white py-3 rounded-lg font-medium transition-colors flex items-center justify-center"
+                                data-implementation="Should validate form and send email">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Resume Download -->
+            <div class="mt-16 text-center">
+                <div class="bg-card-bg rounded-xl p-8 border border-gray-700">
+                    <h3 class="text-2xl font-bold text-tech-blue mb-4">Download My Resume</h3>
+                    <p class="text-text-muted mb-6">
+                        Get a detailed overview of my skills, projects, and experience in PDF format.
+                    </p>
+                    <button class="bg-tech-blue hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center"
+                            data-event="click:downloadResume" data-implementation="Should download PDF resume">
+                        <i class="fas fa-download mr-2"></i>
+                        Download Resume (PDF)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="py-8 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="mb-4">
+                <span class="text-java-orange text-lg font-mono">&lt;</span>
+                <span class="text-xl font-bold">Alex Johnson</span>
+                <span class="text-java-orange text-lg font-mono">/&gt;</span>
+            </div>
+            <p class="text-text-muted text-sm">
+                Built with passion for backend development • Java • Spring Boot • RESTful APIs
+            </p>
+            <p class="text-text-muted text-xs mt-2">
+                © 2024 Alex Johnson. Ready to contribute to your development team.
+            </p>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        (function() {
+            // TODO: Implement smooth scrolling navigation
+            // TODO: Implement contact form submission
+            // TODO: Implement resume download functionality
+            // TODO: Add scroll-triggered animations
+            // TODO: Implement mobile navigation menu
+            
+            // Simple smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Add scroll effect to navigation
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 100) {
+                    nav.classList.add('bg-dark-bg/98');
+                } else {
+                    nav.classList.remove('bg-dark-bg/98');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

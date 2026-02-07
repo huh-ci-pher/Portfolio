@@ -16,26 +16,7 @@ const toolsSkills = [
   { name: "AWS Basics", percentage: 60, color: "bg-yellow-500", icon: "☁️" }
 ];
 
-const certifications = [
-  {
-    title: "Oracle Java Certification",
-    status: "In Progress",
-    icon: "☕",
-    color: "text-java-orange"
-  },
-  {
-    title: "Spring Professional", 
-    status: "Planned 2024",
-    icon: "🍃",
-    color: "text-green-500"
-  },
-  {
-    title: "AWS Cloud Practitioner",
-    status: "Studying", 
-    icon: "☁️",
-    color: "text-yellow-500"
-  }
-];
+
 
 function SkillGroup({ title, skills, delay = 0 }: { title: string; skills: typeof backendSkills; delay?: number }) {
   return (
@@ -63,8 +44,8 @@ function SkillGroup({ title, skills, delay = 0 }: { title: string; skills: typeo
               </span>
               <span>{skill.percentage}%</span>
             </div>
-            <AnimatedProgress 
-              percentage={skill.percentage} 
+            <AnimatedProgress
+              percentage={skill.percentage}
               color={skill.color}
             />
           </motion.div>
@@ -80,7 +61,7 @@ export function SkillsSection() {
   return (
     <section id="skills" className="py-20" ref={ref}>
       <div className="container mx-auto px-6">
-        <motion.h2 
+        <motion.h2
           className="text-4xl font-bold text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -89,39 +70,13 @@ export function SkillsSection() {
         >
           Technical <span className="text-java-orange">Skills</span>
         </motion.h2>
-        
+
         <div className="grid lg:grid-cols-2 gap-12">
           <SkillGroup title="Backend Development" skills={backendSkills} delay={0.2} />
           <SkillGroup title="Tools & Technologies" skills={toolsSkills} delay={0.4} />
         </div>
-        
-        {/* Certifications */}
-        <motion.div 
-          className="mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-semibold text-center mb-8">Certifications & Learning</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={cert.title}
-                className="bg-card-bg p-6 rounded-xl text-center hover:bg-gray-700 transition-colors cursor-pointer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className={`text-4xl mb-4 ${cert.color}`}>{cert.icon}</div>
-                <h4 className="font-semibold mb-2">{cert.title}</h4>
-                <p className="text-gray-400 text-sm">{cert.status}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+
+
       </div>
     </section>
   );

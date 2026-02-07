@@ -1,0 +1,672 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Chen - Java Backend Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'java-orange': '#F89C42',
+                        'tech-blue': '#4A90E2',
+                        'dark-bg': '#1A1A1A',
+                        'card-bg': '#2D2D2D'
+                    },
+                    fontFamily: {
+                        'mono': ['JetBrains Mono', 'monospace'],
+                        'sans': ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'type': 'typing 3s steps(30) infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate'
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes typing {
+            0%, 50% { border-right: 2px solid #F89C42; }
+            51%, 100% { border-right: 2px solid transparent; }
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(248, 156, 66, 0.3); }
+            to { box-shadow: 0 0 30px rgba(248, 156, 66, 0.5); }
+        }
+        .skill-bar {
+            transition: width 2s ease-in-out;
+        }
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .typing-text {
+            border-right: 2px solid #F89C42;
+            animation: typing 1s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-white font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-dark-bg/90 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold text-java-orange">Alex Chen</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-java-orange transition-colors nav-link">Home</a>
+                    <a href="#about" class="hover:text-java-orange transition-colors nav-link">About</a>
+                    <a href="#skills" class="hover:text-java-orange transition-colors nav-link">Skills</a>
+                    <a href="#projects" class="hover:text-java-orange transition-colors nav-link">Projects</a>
+                    <a href="#contact" class="hover:text-java-orange transition-colors nav-link">Contact</a>
+                </div>
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Background coding workspace image -->
+        <div class="absolute inset-0 z-0">
+            <!-- Modern software development workspace with multiple monitors -->
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
+                 alt="Modern development workspace" class="w-full h-full object-cover opacity-20" />
+            <div class="absolute inset-0 bg-gradient-to-r from-dark-bg via-dark-bg/80 to-transparent"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl">
+                <div class="animate-fade-in">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                        Hi, I'm <span class="text-java-orange">Alex Chen</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-4xl mb-8 text-gray-300">
+                        <span id="typing-text" class="typing-text">Java Backend Developer</span>
+                    </h2>
+                    <p class="text-xl mb-12 text-gray-400 max-w-2xl">
+                        Passionate about building scalable backend systems and RESTful APIs. 
+                        Currently specializing in Java, Spring Boot, and microservices architecture.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <button class="bg-java-orange hover:bg-orange-500 text-dark-bg px-8 py-4 rounded-lg font-semibold transition-all hover:animate-glow">
+                            <i class="fas fa-download mr-2"></i>Download Resume
+                        </button>
+                        <button class="border-2 border-tech-blue text-tech-blue hover:bg-tech-blue hover:text-dark-bg px-8 py-4 rounded-lg font-semibold transition-all">
+                            <i class="fas fa-envelope mr-2"></i>Get In Touch
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating code snippets -->
+        <div class="absolute top-20 right-10 opacity-30 hidden lg:block">
+            <div class="bg-card-bg p-4 rounded-lg font-mono text-sm">
+                <span class="text-tech-blue">@RestController</span><br>
+                <span class="text-white">public class</span> <span class="text-java-orange">UserController</span>
+            </div>
+        </div>
+        <div class="absolute bottom-32 left-10 opacity-30 hidden lg:block">
+            <div class="bg-card-bg p-4 rounded-lg font-mono text-sm">
+                <span class="text-tech-blue">@Service</span><br>
+                <span class="text-white">public void</span> <span class="text-java-orange">processData()</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 animate-on-scroll">
+                About <span class="text-java-orange">Me</span>
+            </h2>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-on-scroll">
+                    <!-- Java developer at work coding -->
+                    <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                         alt="Developer coding Java applications" class="rounded-xl shadow-2xl w-full h-auto" />
+                </div>
+                
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold mb-6">My Journey into Backend Development</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        I discovered my passion for backend development during my computer science studies, 
+                        particularly drawn to the elegance and robustness of Java. What started as curiosity 
+                        about how applications handle data has evolved into expertise in building scalable, 
+                        efficient backend systems.
+                    </p>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        My focus is on creating clean, maintainable code while leveraging modern frameworks 
+                        like Spring Boot to deliver robust APIs and microservices. I'm constantly learning 
+                        and staying updated with the latest in backend technologies and best practices.
+                    </p>
+                    
+                    <!-- Timeline -->
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-4 h-4 bg-java-orange rounded-full flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold">2023 - Present</h4>
+                                <p class="text-gray-400">Intensive Java & Spring Boot Learning</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-4 h-4 bg-tech-blue rounded-full flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold">2022 - 2023</h4>
+                                <p class="text-gray-400">Computer Science Foundation & Programming Fundamentals</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-4 h-4 bg-gray-500 rounded-full flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold">2022</h4>
+                                <p class="text-gray-400">Started Programming Journey</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 animate-on-scroll">
+                Technical <span class="text-java-orange">Skills</span>
+            </h2>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Backend Skills -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold mb-8 text-center">Backend Development</h3>
+                    <div class="space-y-6">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="flex items-center"><i class="fab fa-java text-java-orange mr-2"></i>Java</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-3">
+                                <div class="skill-bar bg-java-orange h-3 rounded-full" style="width: 0%" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="flex items-center"><i class="fas fa-leaf text-green-500 mr-2"></i>Spring Boot</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-3">
+                                <div class="skill-bar bg-green-500 h-3 rounded-full" style="width: 0%" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="flex items-center"><i class="fas fa-database text-tech-blue mr-2"></i>MySQL/PostgreSQL</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-3">
+                                <div class="skill-bar bg-tech-blue h-3 rounded-full" style="width: 0%" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="flex items-center"><i class="fas fa-exchange-alt text-purple-500 mr-2"></i>REST APIs</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-3">
+                                <div class="skill-bar bg-purple-500 h-3 rounded-full" style="width: 0%" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools & Technologies -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold mb-8 text-center">Tools & Technologies</h3>
+                    <div class="space-y-6">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="flex items-center"><i class="fab fa-git-alt text-orange-500 mr-2"></i>Git/GitHub</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-3">
+                                <div class="skill-bar bg-orange-500 h-3 rounded-full" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="flex items-center"><i class="fab fa-docker text-blue-400 mr-2"></i>Docker</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-3">
+                                <div class="skill-bar bg-blue-400 h-3 rounded-full" style="width: 0%" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="flex items-center"><i class="fas fa-cogs text-gray-400 mr-2"></i>Maven/Gradle</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-3">
+                                <div class="skill-bar bg-gray-400 h-3 rounded-full" style="width: 0%" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="flex items-center"><i class="fas fa-cloud text-yellow-500 mr-2"></i>AWS Basics</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-3">
+                                <div class="skill-bar bg-yellow-500 h-3 rounded-full" style="width: 0%" data-width="60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certifications -->
+            <div class="mt-16 animate-on-scroll">
+                <h3 class="text-2xl font-semibold text-center mb-8">Certifications & Learning</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-card-bg p-6 rounded-xl text-center hover:bg-gray-700 transition-colors">
+                        <i class="fab fa-java text-4xl text-java-orange mb-4"></i>
+                        <h4 class="font-semibold mb-2">Oracle Java Certification</h4>
+                        <p class="text-gray-400 text-sm">In Progress</p>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-xl text-center hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-leaf text-4xl text-green-500 mb-4"></i>
+                        <h4 class="font-semibold mb-2">Spring Professional</h4>
+                        <p class="text-gray-400 text-sm">Planned 2024</p>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-xl text-center hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-cloud text-4xl text-yellow-500 mb-4"></i>
+                        <h4 class="font-semibold mb-2">AWS Cloud Practitioner</h4>
+                        <p class="text-gray-400 text-sm">Studying</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-900/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 animate-on-scroll">
+                My <span class="text-java-orange">Projects</span>
+            </h2>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-card-bg rounded-xl overflow-hidden animate-on-scroll">
+                    <!-- Backend API development workspace -->
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" 
+                         alt="API development environment" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">E-Commerce REST API</h3>
+                        <p class="text-gray-400 mb-4">
+                            A comprehensive REST API for an e-commerce platform built with Spring Boot, 
+                            featuring user authentication, product management, and order processing.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-java-orange/20 text-java-orange px-2 py-1 rounded text-sm">Java</span>
+                            <span class="bg-green-500/20 text-green-500 px-2 py-1 rounded text-sm">Spring Boot</span>
+                            <span class="bg-tech-blue/20 text-tech-blue px-2 py-1 rounded text-sm">MySQL</span>
+                        </div>
+                        <div class="bg-gray-800 p-3 rounded-lg mb-4">
+                            <code class="text-sm font-mono">
+                                <span class="text-tech-blue">@PostMapping</span><span class="text-gray-300">("/api/orders")</span><br>
+                                <span class="text-white">public ResponseEntity&lt;Order&gt;</span><br>
+                                <span class="text-java-orange">createOrder</span><span class="text-gray-300">(@RequestBody Order order)</span>
+                            </code>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="flex-1 bg-java-orange hover:bg-orange-500 text-dark-bg text-center py-2 rounded transition-colors">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </a>
+                            <a href="#" class="flex-1 border border-tech-blue text-tech-blue hover:bg-tech-blue hover:text-dark-bg text-center py-2 rounded transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-card-bg rounded-xl overflow-hidden animate-on-scroll">
+                    <!-- Microservices architecture diagram -->
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" 
+                         alt="Microservices architecture visualization" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Task Management Microservice</h3>
+                        <p class="text-gray-400 mb-4">
+                            A microservice architecture for task management with Spring Cloud, 
+                            featuring service discovery, API gateway, and distributed configuration.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-java-orange/20 text-java-orange px-2 py-1 rounded text-sm">Java</span>
+                            <span class="bg-green-500/20 text-green-500 px-2 py-1 rounded text-sm">Spring Cloud</span>
+                            <span class="bg-blue-400/20 text-blue-400 px-2 py-1 rounded text-sm">Docker</span>
+                        </div>
+                        <div class="bg-gray-800 p-3 rounded-lg mb-4">
+                            <code class="text-sm font-mono">
+                                <span class="text-tech-blue">@EnableEurekaClient</span><br>
+                                <span class="text-tech-blue">@SpringBootApplication</span><br>
+                                <span class="text-white">public class</span> <span class="text-java-orange">TaskService</span>
+                            </code>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="flex-1 bg-java-orange hover:bg-orange-500 text-dark-bg text-center py-2 rounded transition-colors">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </a>
+                            <a href="#" class="flex-1 border border-tech-blue text-tech-blue hover:bg-tech-blue hover:text-dark-bg text-center py-2 rounded transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-card-bg rounded-xl overflow-hidden animate-on-scroll">
+                    <!-- Database design and backend development -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" 
+                         alt="Database development and data analysis" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Library Management System</h3>
+                        <p class="text-gray-400 mb-4">
+                            A complete library management system with Spring Boot backend, 
+                            featuring book catalog, user management, and automated email notifications.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-java-orange/20 text-java-orange px-2 py-1 rounded text-sm">Java</span>
+                            <span class="bg-green-500/20 text-green-500 px-2 py-1 rounded text-sm">Spring Boot</span>
+                            <span class="bg-purple-500/20 text-purple-500 px-2 py-1 rounded text-sm">JPA</span>
+                        </div>
+                        <div class="bg-gray-800 p-3 rounded-lg mb-4">
+                            <code class="text-sm font-mono">
+                                <span class="text-tech-blue">@Entity</span><br>
+                                <span class="text-white">public class</span> <span class="text-java-orange">Book</span> <span class="text-gray-300">{</span><br>
+                                <span class="text-gray-300">&nbsp;&nbsp;</span><span class="text-tech-blue">@Id @GeneratedValue</span>
+                            </code>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="flex-1 bg-java-orange hover:bg-orange-500 text-dark-bg text-center py-2 rounded transition-colors">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </a>
+                            <a href="#" class="flex-1 border border-tech-blue text-tech-blue hover:bg-tech-blue hover:text-dark-bg text-center py-2 rounded transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Technical Achievements -->
+            <div class="mt-16 animate-on-scroll">
+                <h3 class="text-2xl font-semibold text-center mb-8">Technical Achievements</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-card-bg p-6 rounded-xl text-center">
+                        <div class="text-3xl font-bold text-java-orange mb-2">15+</div>
+                        <p class="text-gray-400">Projects Completed</p>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-xl text-center">
+                        <div class="text-3xl font-bold text-tech-blue mb-2">500+</div>
+                        <p class="text-gray-400">Hours of Coding</p>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-xl text-center">
+                        <div class="text-3xl font-bold text-green-500 mb-2">8+</div>
+                        <p class="text-gray-400">Technologies Learned</p>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-xl text-center">
+                        <div class="text-3xl font-bold text-purple-500 mb-2">100%</div>
+                        <p class="text-gray-400">Committed to Growth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 animate-on-scroll">
+                Get In <span class="text-java-orange">Touch</span>
+            </h2>
+            
+            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold mb-6">Let's Connect</h3>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        I'm always open to discussing new opportunities, exciting projects, 
+                        or just connecting with fellow developers. Whether you're looking for 
+                        a dedicated backend developer or want to collaborate on something amazing, 
+                        I'd love to hear from you!
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-java-orange/20 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-java-orange"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-gray-400">alex.chen.dev@email.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-tech-blue/20 rounded-lg flex items-center justify-center">
+                                <i class="fab fa-linkedin text-tech-blue"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">LinkedIn</h4>
+                                <p class="text-gray-400">linkedin.com/in/alexchen-dev</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gray-600/20 rounded-lg flex items-center justify-center">
+                                <i class="fab fa-github text-gray-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">GitHub</h4>
+                                <p class="text-gray-400">github.com/alexchen-dev</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="animate-on-scroll">
+                    <form class="bg-card-bg/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700">
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 focus:border-java-orange focus:ring-1 focus:ring-java-orange outline-none transition-colors" placeholder="Your Name">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 focus:border-java-orange focus:ring-1 focus:ring-java-orange outline-none transition-colors" placeholder="your.email@example.com">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium mb-2">Subject</label>
+                            <input type="text" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 focus:border-java-orange focus:ring-1 focus:ring-java-orange outline-none transition-colors" placeholder="Project Discussion">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium mb-2">Message</label>
+                            <textarea rows="4" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 focus:border-java-orange focus:ring-1 focus:ring-java-orange outline-none transition-colors resize-none" placeholder="Tell me about your project or opportunity..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-java-orange hover:bg-orange-500 text-dark-bg font-semibold py-3 rounded-lg transition-all hover:animate-glow">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="text-xl font-bold text-java-orange mb-2">Alex Chen</div>
+                    <p class="text-gray-400">Java Backend Developer</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-java-orange transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-tech-blue transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-java-orange transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Alex Chen. Built with passion for backend development.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Typing animation
+            const typingText = document.getElementById('typing-text');
+            const phrases = ['Java Backend Developer', 'Spring Boot Enthusiast', 'API Architect', 'Problem Solver'];
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function typeWriter() {
+                const currentPhrase = phrases[phraseIndex];
+                
+                if (isDeleting) {
+                    typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                let typeSpeed = isDeleting ? 50 : 100;
+
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    typeSpeed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    typeSpeed = 200;
+                }
+
+                setTimeout(typeWriter, typeSpeed);
+            }
+
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Skill bar animations
+            const skillObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const skillBars = entry.target.querySelectorAll('.skill-bar');
+                        skillBars.forEach(bar => {
+                            const width = bar.getAttribute('data-width');
+                            setTimeout(() => {
+                                bar.style.width = width;
+                            }, 200);
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            // Active navigation
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function updateActiveNav() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.pageYOffset >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('text-java-orange');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('text-java-orange');
+                    }
+                });
+            }
+
+            // Initialize
+            document.addEventListener('DOMContentLoaded', () => {
+                typeWriter();
+
+                document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                    observer.observe(el);
+                });
+
+                document.querySelectorAll('#skills').forEach(el => {
+                    skillObserver.observe(el);
+                });
+
+                window.addEventListener('scroll', updateActiveNav);
+                updateActiveNav();
+
+                // Form submission
+                const form = document.querySelector('form');
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    // TODO: Implement form submission logic
+                    alert('Thank you for your message! I\'ll get back to you soon.');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

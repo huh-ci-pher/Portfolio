@@ -24,7 +24,7 @@ export function Navigation() {
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetBottom = offsetTop + element.offsetHeight;
-          
+
           if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
             setActiveSection(section);
             break;
@@ -46,10 +46,10 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-dark-bg/90 backdrop-blur-sm z-50 border-b border-gray-800">
+    <nav className="fixed top-0 w-full z-50 transition-all duration-300 glass">
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <motion.div 
+          <motion.div
             className="text-xl font-bold text-java-orange"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -57,18 +57,17 @@ export function Navigation() {
           >
             Alex Chen
           </motion.div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className={`transition-colors ${
-                  activeSection === item.href.substring(1)
+                className={`transition-colors ${activeSection === item.href.substring(1)
                     ? "text-java-orange"
                     : "text-white hover:text-java-orange"
-                }`}
+                  }`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -99,11 +98,10 @@ export function Navigation() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className={`block w-full text-left py-2 transition-colors ${
-                  activeSection === item.href.substring(1)
+                className={`block w-full text-left py-2 transition-colors ${activeSection === item.href.substring(1)
                     ? "text-java-orange"
                     : "text-white hover:text-java-orange"
-                }`}
+                  }`}
               >
                 {item.name}
               </button>
