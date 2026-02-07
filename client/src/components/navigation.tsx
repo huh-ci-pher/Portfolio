@@ -50,7 +50,7 @@ export function Navigation() {
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <motion.div
-            className="text-xl font-bold text-java-orange"
+            className="text-xl font-bold text-primary-purple"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -65,8 +65,8 @@ export function Navigation() {
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
                 className={`transition-colors ${activeSection === item.href.substring(1)
-                    ? "text-java-orange"
-                    : "text-white hover:text-java-orange"
+                    ? "text-primary-purple"
+                    : "text-white hover:text-primary-purple"
                   }`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -99,8 +99,8 @@ export function Navigation() {
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
                 className={`block w-full text-left py-2 transition-colors ${activeSection === item.href.substring(1)
-                    ? "text-java-orange"
-                    : "text-white hover:text-java-orange"
+                    ? "text-primary-purple"
+                    : "text-white hover:text-primary-purple"
                   }`}
               >
                 {item.name}

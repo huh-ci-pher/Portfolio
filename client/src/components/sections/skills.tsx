@@ -3,9 +3,9 @@ import { AnimatedProgress } from "@/components/ui/animated-progress";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 const backendSkills = [
-  { name: "Java", percentage: 85, color: "bg-java-orange", icon: "☕" },
+  { name: "Java", percentage: 85, color: "bg-primary-purple", icon: "☕" },
   { name: "Spring Boot", percentage: 80, color: "bg-green-500", icon: "🍃" },
-  { name: "MySQL/PostgreSQL", percentage: 75, color: "bg-tech-blue", icon: "🗄️" },
+  { name: "MySQL/PostgreSQL", percentage: 75, color: "bg-accent-cyan", icon: "🗄️" },
   { name: "REST APIs", percentage: 85, color: "bg-purple-500", icon: "🔄" }
 ];
 
@@ -68,7 +68,7 @@ export function SkillsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Technical <span className="text-java-orange">Skills</span>
+          <span className="gradient-text">Technical Skills</span>
         </motion.h2>
 
         <div className="grid lg:grid-cols-2 gap-12">

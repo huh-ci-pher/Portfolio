@@ -56,4 +56,4 @@ The application will be available at `http://localhost:5173`.
   - `src/pages/`: Page layouts (Portfolio, NotFound).
 
 ---
-Built with ❤️ by **Alex Chen**.
+Built with ❤️ by using ** replit and a**.

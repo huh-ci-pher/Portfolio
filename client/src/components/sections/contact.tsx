@@ -21,17 +21,17 @@ const contactInfo = [
     icon: Mail,
     title: "Email",
     value: "alex.chen.dev@email.com",
-    color: "bg-java-orange/20 text-java-orange"
+    color: "bg-primary-purple/20 text-primary-purple"
   },
   {
-    icon: Linkedin, 
+    icon: Linkedin,
     title: "LinkedIn",
     value: "linkedin.com/in/alexchen-dev",
-    color: "bg-tech-blue/20 text-tech-blue"
+    color: "bg-accent-cyan/20 text-accent-cyan"
   },
   {
     icon: Github,
-    title: "GitHub", 
+    title: "GitHub",
     value: "github.com/alexchen-dev",
     color: "bg-gray-600/20 text-gray-400"
   }
@@ -90,16 +90,16 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-6">
-        <motion.h2 
+        <motion.h2
           className="text-4xl font-bold text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Get In <span className="text-java-orange">Touch</span>
+          <span className="gradient-text">Get In Touch</span>
         </motion.h2>
-        
+
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -109,12 +109,12 @@ export function ContactSection() {
           >
             <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
             <p className="text-gray-300 mb-8 leading-relaxed">
-              I'm always open to discussing new opportunities, exciting projects, 
-              or just connecting with fellow developers. Whether you're looking for 
-              a dedicated backend developer or want to collaborate on something amazing, 
+              I'm always open to discussing new opportunities, exciting projects,
+              or just connecting with fellow developers. Whether you're looking for
+              a dedicated backend developer or want to collaborate on something amazing,
               I'd love to hear from you!
             </p>
-            
+
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <motion.div
@@ -136,14 +136,14 @@ export function ContactSection() {
               ))}
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <form 
+            <form
               onSubmit={handleSubmit}
               className="bg-card-bg/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700"
             >
@@ -156,12 +156,12 @@ export function ContactSection() {
                   type="text"
                   value={formData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
-                  className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 focus:border-java-orange focus:ring-1 focus:ring-java-orange outline-none transition-colors"
+                  className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 focus:border-primary-purple focus:ring-1 focus:ring-primary-purple outline-none transition-colors"
                   placeholder="Your Name"
                   required
                 />
               </div>
-              
+
               <div className="mb-6">
                 <Label htmlFor="email" className="block text-sm font-medium mb-2">
                   Email *
@@ -171,12 +171,12 @@ export function ContactSection() {
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 focus:border-java-orange focus:ring-1 focus:ring-java-orange outline-none transition-colors"
+                  className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 focus:border-primary-purple focus:ring-1 focus:ring-primary-purple outline-none transition-colors"
                   placeholder="your.email@example.com"
                   required
                 />
               </div>
-              
+
               <div className="mb-6">
                 <Label htmlFor="subject" className="block text-sm font-medium mb-2">
                   Subject
@@ -186,11 +186,11 @@ export function ContactSection() {
                   type="text"
                   value={formData.subject}
                   onChange={(e) => handleInputChange('subject', e.target.value)}
-                  className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 focus:border-java-orange focus:ring-1 focus:ring-java-orange outline-none transition-colors"
+                  className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 focus:border-primary-purple focus:ring-1 focus:ring-primary-purple outline-none transition-colors"
                   placeholder="Project Discussion"
                 />
               </div>
-              
+
               <div className="mb-6">
                 <Label htmlFor="message" className="block text-sm font-medium mb-2">
                   Message *
@@ -200,16 +200,16 @@ export function ContactSection() {
                   rows={4}
                   value={formData.message}
                   onChange={(e) => handleInputChange('message', e.target.value)}
-                  className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 focus:border-java-orange focus:ring-1 focus:ring-java-orange outline-none transition-colors resize-none"
+                  className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 focus:border-primary-purple focus:ring-1 focus:ring-primary-purple outline-none transition-colors resize-none"
                   placeholder="Tell me about your project or opportunity..."
                   required
                 />
               </div>
-              
-              <Button 
+
+              <Button
                 type="submit"
                 disabled={contactMutation.isPending}
-                className="w-full bg-java-orange hover:bg-java-orange/80 text-dark-bg font-semibold py-3 rounded-lg transition-all hover:animate-glow"
+                className="w-full bg-primary-purple hover:bg-primary-purple/80 text-dark-bg font-semibold py-3 rounded-lg transition-all hover:animate-glow"
               >
                 <Send className="mr-2 h-4 w-4" />
                 {contactMutation.isPending ? "Sending..." : "Send Message"}

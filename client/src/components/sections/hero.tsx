@@ -69,8 +69,8 @@ export function HeroSection() {
       {/* Background with Gradient and Floating Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-dark-bg"></div>
-        <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-java-orange/20 rounded-full blur-[100px] animate-float"></div>
-        <div className="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-tech-blue/20 rounded-full blur-[100px] animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-primary-purple/20 rounded-full blur-[100px] animate-float"></div>
+        <div className="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-accent-cyan/20 rounded-full blur-[100px] animate-float" style={{ animationDelay: '2s' }}></div>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
       </div>
 
@@ -87,7 +87,7 @@ export function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Hi, I'm <span className="text-java-orange">Alex Chen</span>
+              Hi, I'm <span className="text-primary-purple">Alex Chen</span>
             </motion.h1>
 
             <motion.h2
@@ -96,7 +96,7 @@ export function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <span className="border-r-2 border-java-orange animate-typing">
+              <span className="border-r-2 border-primary-purple animate-typing">
                 {currentPhrase}
               </span>
             </motion.h2>
@@ -119,7 +119,7 @@ export function HeroSection() {
             >
               <Button
                 onClick={handleDownloadResume}
-                className="bg-java-orange hover:bg-java-orange/80 text-dark-bg px-8 py-4 rounded-lg font-semibold transition-all hover:animate-glow"
+                className="bg-primary-purple hover:bg-primary-purple/90 text-dark-bg px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-purple/50"
                 size="lg"
               >
                 <Download className="mr-2 h-5 w-5" />
@@ -128,7 +128,7 @@ export function HeroSection() {
               <Button
                 onClick={scrollToContact}
                 variant="outline"
-                className="border-2 border-tech-blue text-tech-blue hover:bg-tech-blue hover:text-dark-bg px-8 py-4 rounded-lg font-semibold transition-all"
+                className="border-2 border-accent-cyan text-accent-cyan hover:bg-accent-cyan hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent-cyan/50"
                 size="lg"
               >
                 <Mail className="mr-2 h-5 w-5" />

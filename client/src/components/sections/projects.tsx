@@ -9,9 +9,9 @@ const projects = [
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     alt: "API development environment",
     technologies: [
-      { name: "Java", color: "bg-java-orange/20 text-java-orange" },
+      { name: "Java", color: "bg-primary-purple/20 text-primary-purple" },
       { name: "Spring Boot", color: "bg-green-500/20 text-green-500" },
-      { name: "MySQL", color: "bg-tech-blue/20 text-tech-blue" }
+      { name: "MySQL", color: "bg-accent-cyan/20 text-accent-cyan" }
     ],
     codeSnippet: `@PostMapping("/api/orders")
 public ResponseEntity<Order>
@@ -23,7 +23,7 @@ createOrder(@RequestBody Order order)`
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     alt: "Microservices architecture visualization",
     technologies: [
-      { name: "Java", color: "bg-java-orange/20 text-java-orange" },
+      { name: "Java", color: "bg-primary-purple/20 text-primary-purple" },
       { name: "Spring Cloud", color: "bg-green-500/20 text-green-500" },
       { name: "Docker", color: "bg-blue-400/20 text-blue-400" }
     ],
@@ -37,7 +37,7 @@ public class TaskService`
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     alt: "Database development and data analysis",
     technologies: [
-      { name: "Java", color: "bg-java-orange/20 text-java-orange" },
+      { name: "Java", color: "bg-primary-purple/20 text-primary-purple" },
       { name: "Spring Boot", color: "bg-green-500/20 text-green-500" },
       { name: "JPA", color: "bg-purple-500/20 text-purple-500" }
     ],
@@ -60,14 +60,14 @@ export function ProjectsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          My <span className="text-java-orange">Projects</span>
+          <span className="gradient-text">My Projects</span>
         </motion.h2>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              className="glass-card rounded-xl overflow-hidden hover:border-java-orange/50 transition-all duration-300 group"
+              className="glass-card rounded-xl overflow-hidden hover:border-primary-purple/50 transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -105,10 +105,10 @@ export function ProjectsSection() {
                               return <span key={j} className="text-purple-400">{token}</span>;
                             }
                             if (token.startsWith("@")) {
-                              return <span key={j} className="text-tech-blue">{token}</span>;
+                              return <span key={j} className="text-accent-cyan">{token}</span>;
                             }
                             if (/^[A-Z]/.test(token) && token.length > 1) {
-                              return <span key={j} className="text-java-orange">{token}</span>;
+                              return <span key={j} className="text-primary-purple">{token}</span>;
                             }
                             if (token.startsWith('"') || token.startsWith("'")) {
                               return <span key={j} className="text-green-400">{token}</span>;
@@ -122,7 +122,7 @@ export function ProjectsSection() {
                 </div>
                 <div className="flex gap-3">
                   <Button
-                    className="flex-1 bg-java-orange hover:bg-java-orange/80 text-dark-bg"
+                    className="flex-1 bg-primary-purple hover:bg-primary-purple/80 text-dark-bg"
                     size="sm"
                   >
                     <Github className="mr-2 h-4 w-4" />
@@ -130,7 +130,7 @@ export function ProjectsSection() {
                   </Button>
                   <Button
                     variant="outline"
-                    className="flex-1 border-tech-blue text-tech-blue hover:bg-tech-blue hover:text-dark-bg"
+                    className="flex-1 border-accent-cyan text-accent-cyan hover:bg-accent-cyan hover:text-white"
                     size="sm"
                   >
                     <ExternalLink className="mr-2 h-4 w-4" />

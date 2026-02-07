@@ -26,13 +26,14 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
 
-  /* Portfolio custom colors */
-  --java-orange: hsl(28, 92%, 62%);
-  --tech-blue: hsl(212, 74%, 56%);
-  /* Darker, richer background */
-  --dark-bg: hsl(220, 20%, 10%);
-  /* Slightly lighter card bg for depth */
-  --card-bg: hsl(220, 15%, 16%);
+  /* Modern Portfolio Colors */
+  --primary-purple: hsl(270, 70%, 60%);
+  --accent-cyan: hsl(190, 85%, 55%);
+  --neon-pink: hsl(330, 85%, 65%);
+  /* Lighter, more readable backgrounds */
+  --dark-bg: hsl(240, 12%, 12%);
+  --card-bg: hsl(240, 10%, 16%);
+  --card-hover: hsl(240, 10%, 20%);
 }
 
 .dark {
@@ -89,25 +90,29 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--java-orange);
+    background: var(--primary-purple);
   }
 }
 
 @layer utilities {
-  .text-java-orange {
-    color: hsl(28, 92%, 62%);
+  .text-primary-purple {
+    color: hsl(270, 70%, 60%);
   }
 
-  .text-tech-blue {
-    color: hsl(212, 74%, 56%);
+  .text-accent-cyan {
+    color: hsl(190, 85%, 55%);
   }
 
-  .bg-java-orange {
-    background-color: hsl(28, 92%, 62%);
+  .text-neon-pink {
+    color: hsl(330, 85%, 65%);
   }
 
-  .bg-tech-blue {
-    background-color: hsl(212, 74%, 56%);
+  .bg-primary-purple {
+    background-color: hsl(270, 70%, 60%);
+  }
+
+  .bg-accent-cyan {
+    background-color: hsl(190, 85%, 55%);
   }
 
   .bg-dark-bg {
@@ -118,36 +123,36 @@
     background-color: var(--card-bg);
   }
 
-  .border-java-orange {
-    border-color: hsl(28, 92%, 62%);
+  .border-primary-purple {
+    border-color: hsl(270, 70%, 60%);
   }
 
-  .border-tech-blue {
-    border-color: hsl(212, 74%, 56%);
+  .border-accent-cyan {
+    border-color: hsl(190, 85%, 55%);
   }
 
-  .hover\:bg-java-orange:hover {
-    background-color: hsl(28, 92%, 62%);
+  .hover\:bg-primary-purple:hover {
+    background-color: hsl(270, 70%, 60%);
   }
 
-  .hover\:bg-tech-blue:hover {
-    background-color: hsl(212, 74%, 56%);
+  .hover\:bg-accent-cyan:hover {
+    background-color: hsl(190, 85%, 55%);
   }
 
-  .hover\:text-java-orange:hover {
-    color: hsl(28, 92%, 62%);
+  .hover\:text-primary-purple:hover {
+    color: hsl(270, 70%, 60%);
   }
 
-  .hover\:text-tech-blue:hover {
-    color: hsl(212, 74%, 56%);
+  .hover\:text-accent-cyan:hover {
+    color: hsl(190, 85%, 55%);
   }
 
-  .focus\:border-java-orange:focus {
-    border-color: hsl(28, 92%, 62%);
+  .focus\:border-primary-purple:focus {
+    border-color: hsl(270, 70%, 60%);
   }
 
-  .focus\:ring-java-orange:focus {
-    --tw-ring-color: hsl(28, 92%, 62%);
+  .focus\:ring-primary-purple:focus {
+    --tw-ring-color: hsl(270, 70%, 60%);
   }
 
   /* Glassmorphism utility */
@@ -161,6 +166,40 @@
     background: rgba(30, 41, 59, 0.7);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Gradient text utilities */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--accent-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-purple {
+    background: linear-gradient(135deg, #a855f7 0%, var(--primary-purple) 50%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-cyan {
+    background: linear-gradient(135deg, #06b6d4 0%, var(--accent-cyan) 50%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Section transitions */
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

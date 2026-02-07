@@ -22,7 +22,7 @@ export default function Portfolio() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0 text-center md:text-left">
-              <div className="text-2xl font-bold bg-gradient-to-r from-java-orange to-tech-blue bg-clip-text text-transparent mb-2">Alex Chen</div>
+              <div className="text-2xl font-bold bg-gradient-to-r from-primary-purple to-accent-cyan bg-clip-text text-transparent mb-2">Alex Chen</div>
               <p className="text-gray-400">Building scalable solutions with Java & Spring Boot.</p>
             </div>
 
@@ -31,11 +31,11 @@ export default function Portfolio() {
                 <span className="sr-only">GitHub</span>
                 <Github size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-tech-blue transition-colors transform hover:scale-110">
+              <a href="#" className="text-gray-400 hover:text-accent-cyan transition-colors transform hover:scale-110">
                 <span className="sr-only">LinkedIn</span>
                 <Linkedin size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-java-orange transition-colors transform hover:scale-110">
+              <a href="#" className="text-gray-400 hover:text-primary-purple transition-colors transform hover:scale-110">
                 <span className="sr-only">Email</span>
                 <Mail size={24} />
               </a>
